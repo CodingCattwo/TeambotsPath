@@ -56,7 +56,6 @@ object EDU.gatech.cc.is.simulation.ObstacleSim 5 3.5 0 0.30 xC0C0C0 x000000 2
 object EDU.gatech.cc.is.simulation.ObstacleSim 5 4 0 0.30 xC0C0C0 x000000 2
 
 object EDU.gatech.cc.is.simulation.ObstacleSim 5 -0.5 0 0.30 xC0C0C0 x000000 2
-object EDU.gatech.cc.is.simulation.ObstacleSim 5 -1.0 0 0.30 xC0C0C0 x000000 2
 
 
 object EDU.gatech.cc.is.simulation.ObstacleSim 5 -3 0 0.30 xC0C0C0 x000000 2

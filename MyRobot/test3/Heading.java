@@ -56,7 +56,7 @@ public class Heading extends ControlSystemMFN150 {
     // vector move to target
     NodeVec2 MS_MOVE_TO_HOMEBASE = new v_LinearAttraction_v(0.4, 0.1, PS_HOMEBASE);
     // Vector to leave detected objects
-    NodeVec2 MS_AVOID_OBSTACLES = new v_Avoid_va(2.5, abstract_robot.RADIUS + 0.1, PS_OBS);
+    NodeVec2 MS_AVOID_OBSTACLES = new v_Avoid_va(2.0, abstract_robot.RADIUS + 0.1, PS_OBS);
 
     // noise vector
     
