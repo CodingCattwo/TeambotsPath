@@ -1,0 +1,96 @@
+
+/**
+
+ */
+
+import  java.lang.*;
+import  java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Obstacles {
+
+  // sim's width is 20(-5,15)->42 nodes, heigt is 10(-5,5)->22 nodes
+  /**
+      robot is (-4.5, 0) in the array is (0.5, 5)*2 => [1, 10]
+
+      left-down corner is (-5.0, -5.0), in the array is [0, 0]
+      right-up corner is (15.0, 5.0), in the array is [20, 10]*2 =>[40, 20]
+      so (x,y) in the array is [(x+5)*2, (y+5)*2]
+  =========
+  for example
+    obstacle is in (0,0), radius<0.5, then
+    in the array its index is [10, 10]
+    it occupy x:(-0.5, 0.5), y:(-0.5, 0.5)
+    which means it occupy the array's [9, 9] [9, 10] [10, 9] [10, 10] etc
+    thus obstacle in (x, y) occupy 9 units in the array 
+    [x,y] [x,y+1] [x,y-1]
+    [x-1,y] [x-1,y-1] [x-1, y+1]
+    [x+1,y] [x+1, y+1] [x+1, y-1]
+
+    occupied is 0, available is 1 in the array
+    then it can go to the 0s,
+    etc.
+    
+    tips:
+
+      0.8 -1.8 0.6 
+      0.8 / 0.5 = 1.6 floor=> 2   * 0.5 = 1
+      0.3 / 0.5 = 0.6 floor => 1 *0.5 = 0.5
+      0.1 / 0.5 = 0.2 floor => 1 * 0.5 = 0.5
+
+   */
+
+  public double[][] isObstacle= new double[42][22];
+
+  public void test(){
+    
+  }
+   public static void main(String[] argc)
+  {
+    List<Node> array = new ArrayList<Node>();
+
+    array.add(new Node(-0.5, 3.5));
+    array.add(new Node(-1.5, 0));
+    array.add(new Node(-2.5, 2));
+    array.add(new Node(-4, 4));
+    array.add(new Node(1, 1.2));
+
+    array.add(new Node(0.8, -1));
+    array.add(new Node(-0.5, -2.8));
+    array.add(new Node(-1.5, -4));
+    array.add(new Node(-3, -2.3));
+
+    array.add(new Node(3.5, 2.8));
+    array.add(new Node(5, 0.8));
+    array.add(new Node(6.5, 3.5));
+    array.add(new Node(8, 1));
+
+
+    array.add(new Node(3, -1));
+    array.add(new Node(3, -1.5));
+    array.add(new Node(3, -2.0));
+    array.add(new Node(3, -2.5));
+    
+    array.add(new Node(6, -3));
+    array.add(new Node(7, -1.2));
+    array.add(new Node(6.5, -0.9));
+    array.add(new Node(7.5, -1.5));
+    // Iterator it1 = array.iterator();
+    // while(it1.hasNext()){
+    //     System.out.println(it1.next());
+    // }
+    Node tmp = new Node(1,1);
+    System.out.println(tmp.toString());
+  }
+}
+
+class Node{
+    public double x;
+    public double y;
+
+    public Node(double _x, double _y){
+      this.x = _x;
+      this.y = _y;
+    }
+  }
